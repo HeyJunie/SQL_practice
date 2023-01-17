@@ -4,8 +4,8 @@
 ### [177. Nth Highest Salary](https://leetcode.com/problems/nth-highest-salary/)
 
 ### 문제
-Write an SQL query to report the second highest salary from the Employee table. <br>
-If there is no second highest salary, the query should report null.<br>
+Write an SQL query to report the nth highest salary from the Employee table. <br>
+If there is no nth highest salary, the query should report null.<br>
 <br>
 Ex1)<br>
 Input: <br>
