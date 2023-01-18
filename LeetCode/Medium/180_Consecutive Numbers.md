@@ -4,8 +4,9 @@
 ### [180. Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/description/)
 
 ### 문제
-Write an SQL query to report the nth highest salary from the Employee table. <br>
-If there is no nth highest salary, the query should report null.<br>
+Write an SQL query to find all numbers that appear at least three times consecutively.<br>
+Return the result table in any order.<br>
+The query result format is in the following example..<br>
 <br>
 Ex1)<br>
 Input: 
