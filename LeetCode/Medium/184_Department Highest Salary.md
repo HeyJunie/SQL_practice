@@ -39,6 +39,7 @@ Output:
 
 
 ### 문제 풀이
+1) 윈도우 함수를 이용해서 풀어보기
 ```Mysql
 SELECT Department,
        Employee,
@@ -53,4 +54,16 @@ FROM (
     ON e.departmentId = d.id
 )rank_sal
 WHERE rank_sal.Ranking = 1
+```
+2) 서브쿼리를 이용해서 풀어보기
+```Mysql
+SELECT d.name AS Department,
+       e.name AS Employee,
+       e.salary
+FROM Employee e
+JOIN Department d
+ON e.departmentId = d.id
+WHERE (e.departmentId, e.salary) IN (SELECT departmentId, MAX(salary) 
+                                     FROM Employee
+                                     GROUP BY departmentId)
 ```
