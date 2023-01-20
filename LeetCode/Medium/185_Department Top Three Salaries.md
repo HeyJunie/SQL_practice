@@ -45,6 +45,7 @@ Output:
 
 
 ### 문제 풀이
+1) 윈도우 함수 이용하기
 ```Mysql
 SELECT Department,
        Employee,
@@ -60,3 +61,5 @@ FROM (
 )rank_sal
 WHERE rank_sal.Ranking <= 3
 ```
+2) 서브 쿼리 이용하기
+3) GROUP BY, HAVING을 이용하기
