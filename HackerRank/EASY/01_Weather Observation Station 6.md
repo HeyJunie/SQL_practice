@@ -11,7 +11,7 @@ Your result cannot contain duplicates.
 ### 문제 풀이
 정규표현식(REGULAR EXPRESSION)을 이용해서 문제 풀어보기
 ```Mysql
-SELECT CITY
+SELECT DISTINCT CITY
 FROM STATION
 WHERE CITY REGEXP '^[aeiou].*'
 -- ^ : 대괄호 안에 있는 문자로 시작하는 말
