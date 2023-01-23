@@ -14,6 +14,5 @@ Your result cannot contain duplicates.<br>
 ```Mysql
 SELECT DISTINCT CITY
 FROM STATION
-WHERE CITY REGEXP '^[aeiou]' 
-  AND CITY REGEXP '[aeiou]$'
+WHERE CITY REGEXP '^[aeiou].*[aeiou]$'
 ```
