@@ -13,6 +13,6 @@ Your result cannot contain duplicates.<br>
 ```Mysql
 SELECT DISTINCT CITY
 FROM STATION
-WHERE CITY REGEXP '[aeiou]$'
+WHERE CITY REGEXP '.*[aeiou]$'
 -- $ : 대괄호 안에 있는 문자로 끝나는 말
 ```
