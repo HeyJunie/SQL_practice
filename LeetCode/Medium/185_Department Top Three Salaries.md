@@ -62,4 +62,28 @@ FROM (
 WHERE rank_sal.Ranking <= 3
 ```
 2) 서브 쿼리 이용하기
-3) GROUP BY, HAVING을 이용하기
+```Mysql
+SELECT d.name AS Department, 
+       e1.name AS Employee, 
+       e1.salary AS Salary
+FROM Employee e1
+JOIN Department d
+ON e1.DepartmentId = d.Id
+WHERE 3 > (SELECT COUNT(DISTINCT salary) 
+           FROM Employee e2
+           WHERE e1.DepartmentId = e2.DepartmentId
+             AND e1.Salary < e2.salary)
+```
+4) GROUP BY, HAVING을 이용하기
+```Mysql
+SELECT d.Name AS Department, 
+       e1.Name AS Employee, 
+       e1.Salary 
+FROM Department d, Employee e1, Employee e2
+WHERE d.ID = e1.DepartmentId 
+  AND e1.DepartmentId = e2.DepartmentId 
+  AND e1.Salary <= e2.Salary
+group by d.ID, e1.Name 
+HAVING COUNT(DISTINCT e2.Salary) <= 3
+ORDER BY d.Name, e1.Salary desc
+```
