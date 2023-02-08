@@ -13,15 +13,13 @@ Query the median of the Northern Latitudes (LAT_N) from STATION and round your a
 MySQL은 Median값을 계산하는 함수가 따로 없다<br>
 1. SET 함수로 중앙값이 나오는 값을 따로 설정한 후, RANK를 정렬해서 순서가 중앙값이 나오는 경우를 뽑아 문제를 해결한다.
 ```Mysql
-SET @mid = (SELECT ROUND(COUNT(LAT_N) / 2) FROM STATION);
-
 SELECT ROUND(LAT_N, 4)
 FROM (
     SELECT RANK() OVER(ORDER BY LAT_N) AS LAT_RANK
          , LAT_N
     FROM STATION
 ) AS R
-WHERE LAT_RANK = @mid
+WHERE LAT_RANK = (SELECT ROUND(COUNT(LAT_N) / 2) FROM STATION)
 ```
 2. SET함수를 이용해서 문제를 해결한다. (구글 검색으로 가장 많이 나오는 결과)
 ```Mysql
